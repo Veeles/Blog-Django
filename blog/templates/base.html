@@ -8,13 +8,14 @@
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 <body>
     {% include 'header.html' %}
     {% block content %}
-    <h1>hello world</h1>
     {% endblock %}
     {% include 'footer.html' %}
 

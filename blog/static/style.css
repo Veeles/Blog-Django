@@ -1,0 +1,46 @@
+.navbar .navbar-nav .nav-link:hover{
+    color: rgb(247, 32, 32)
+    
+    }
+
+
+.big_red_date {
+    margin-top: 20px;
+    display: block;
+    text-transform: uppercase;
+    font-family: 'Brush Script MT', cursive;
+    color: #ed1c24;
+    font-size: 46px;
+    line-height: 51px;
+    font-weight: bold;
+    }
+
+.comments_caption {
+    float: right;
+    font-weight: 400;
+    font-family: Antonio-Light !important;
+    color: #b4b4b4 !important;
+    }
+    
+        
+.post_title{
+    font-family: Antonio-Regular;
+    color: #444;
+    font-size: 46px;
+    line-height: 51px;
+    margin-top: 0;
+    
+    }
+.a_post_title {
+    color: #444;
+}
+
+.a_post_title:hover {
+    color:#444; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+.card {
+    border: none;
+  }

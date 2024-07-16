@@ -26,7 +26,7 @@ import os
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view, name='home_page',),
-    path('test/', views.test_view),
+    path('register/', views.register, name='register'),
 
 ] + static(settings.MEDIA_URL)
 

@@ -7,9 +7,10 @@
 <div class="content ml-5 pl-5 mx-auto" style="width: 70%;">
 
     <h2 class="text-start ml-5 mt-4">LATEST POSTS</h2>
+    {% for post in mydata%}
     <span class="d-block mx-auto mb-2" style="border-bottom: 1px solid black; width: 100%;"></span>
     <div class="card">
-        <img src="{% static 'photos/example1.jpg' %}" style="height: 500px; width: 1200px;" class="text-center mt-2 ml-5 mb-2">
+        <img src="{% static post.photo %}" style="height: 500px; width: 1200px;" class="text-center mt-2 ml-5 mb-2">
         <div class="card-body">
             <div class="d-flex flex-row justify-content-center">
                 <div class="flex-sm-fill ml-4">
@@ -23,17 +24,8 @@
                 <span class=" border border-right ml-3"></span>
 
                 <div class="flex-xxl-fill ml-5">
-                    <h3 class="post_title mt-3 "><a href="" class="a_post_title ">Nie pozwól, by koronawirus zaraził Twój umysł</a></h3>
-                    <p><strong> of description, Fragment of description, Fragment of description, Fragment of description, Fragment of description, 
-                        Fragment of description, Fragment of description, Fragment of description, Fragment of description, Fragment of description,
-                         Fragment of description, Fragment of description, Fragment of description, Fragment of description, Fragment of description,
-                          Fragment of description, Fragment of description, Fragment of description, Fragment of description, Fragment of description,
-                           Fragment of description, Fragment of description, Fragment of description, Fragment of description, Fragment of description,
-                            Fragment of description, Fragment of description, Fragment of description, Fragment of description, Fragment of description,
-                             Fragment of description, Fragment of description, Fragment of description, Fragment of description, Fragment of description,
-                              Fragment of description, Fragment of description, Fragment of description, Fragment of description, Fragment of description, 
-                              Fragment of description, Fragment of description, Fragment of description, Fragment of description, Fragment of description, 
-                              Fragment of description, Fragment of description, Fragment of description, Fragment of description, Fragment of description,</strong> </p>
+                    <h3 class="post_title mt-3 "><a href="" class="a_post_title ">{{post.title}}</a></h3>
+                    <p><strong> {{post.description}}</strong> </p>
                     <span class="border border-bottom ml-1" style="display:block; width:100%;"></span>
               
                 </div>
@@ -46,6 +38,7 @@
         <span class="border border-bottom mb-4"></span>
 
     </div>   
+    {% endfor %}
 </div>
 
 

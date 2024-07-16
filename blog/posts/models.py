@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    photo = models.ImageField()
+    photo = models.ImageField(upload_to='photos/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -16,7 +16,6 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     contents = models.TextField()
-    create_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return f"comment by {self.author} on {self.post}"

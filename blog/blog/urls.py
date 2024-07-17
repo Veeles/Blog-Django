@@ -22,11 +22,12 @@ from django.http import HttpResponse
 from django.urls import path
 from . import views
 import os
+from users import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view, name='home_page',),
-    path('register/', views.register, name='register'),
+    path('register/', v.register, name='register')
 
 ] + static(settings.MEDIA_URL)
 

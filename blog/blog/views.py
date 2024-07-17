@@ -4,7 +4,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import os
 from posts.models import Post
-from .forms import Register
 
 def home_view(request):
     posts = Post.objects.all().values()
@@ -15,12 +14,7 @@ def home_view(request):
     return HttpResponse(template.render(content, request))
 
 
-def login(request):
-    pass
 
-def register(request):
-    form = Register()
-    return render(request, 'register.html', {'form': form})
 
 def post(request):
     pass

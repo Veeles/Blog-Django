@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static 
 from django.http import HttpResponse
-from django.urls import path
+from django.urls import path, include
 from . import views
 import os
 from users import views as v
@@ -27,8 +27,8 @@ from users import views as v
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view, name='home_page',),
-    path('register/', v.register, name='register')
-
+    path('', include('users.urls')),
+    path('', include("django.contrib.auth.urls")),
 ] + static(settings.MEDIA_URL)
 
 

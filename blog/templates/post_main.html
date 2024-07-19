@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %} {{post.title}} {% endblock %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="content ml-5 pl-5 mx-auto" style="width: 60%;">
+    <div class="card">
+        <img src="{% static post.photo %}" style="height: 500px; width: 1090px;" class="text-center mt-2  mb-2">
+        <div class="card-body">
+            <div class="d-flex flex-row justify-content-center">
+                <div class="flex-sm-fill">
+                    
+                    <span style="color: red;" class="big_red_date">DAY/MON</span>
+                    <span class="comments_caption" style="font-size:28px; margin-left: 5px;">{{post.comments.count}} Comments</span>
+
+
+                
+                </div>
+                <span class=" border border-right ml-3"></span>
+
+                <div class="flex-xxl-fill ml-5">
+                    <h3 class="post_title mt-3 a_post_title">{{post.title}}</h3>
+              
+                </div>
+                <span class=" border border-bottom ml-1 mt-3 mb-3"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <span class=" border-bottom mb-3"></span>
+    <div class="container">
+        <h3 class="mt-4 mb-4">{{post.description}}</h3>
+    </div>
+    <span class="border-bottom border-1 border-dark d-block my-2"></span>
+    <h3 style="color: rgb(247, 90, 90);" class="mt-3 ml-2 mb-4"> Comments: </h3>
+    <div class="comments mt-5 mb-5 text-center">
+        {% for comment in post.comments.all %}
+        <div class="d-flex flex-row justify-content-center mb-4 mt-2" style="background-color: rgb(238, 238, 238);">
+            <div class="flex-sm-fill mt-2">
+                <img src="{% static 'photos/user_photo.png' %}">
+            </div>
+            <div class="flex-xxl-fill ml-5 text-start mt-2">
+                <h4>{{ comment.author }}</h4>
+                <p>{{ comment.contents }}</p>
+
+            </div>
+        </div>
+        {% endfor %}
+        <form method="post" class="form-group mt-5">
+            {% csrf_token %}
+
+            {{form|crispy}}
+            <button type="submit" class="btn btn-outline-secondary w-100 ">Add Comment</button>
+        </form>   
+    </div>
+</div>
+
+{% endblock %}

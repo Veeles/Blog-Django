@@ -4,15 +4,20 @@
 {% load crispy_forms_tags %}
 {% block content %} 
 
-<form method="post" class="from-group ml-3">
 
-    {% csrf_token %}
-    {{ form|crispy }}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="w-100" style="max-width: 300px;">
+        <h1 class="text-center mt-3">Login</h1>
+        <span class="d-block mx-auto mb-2" style="border-bottom: 1px solid black; width: 100%;"></span>
+        <form method="post" class="form-group mt-4">
 
-    <button type="submit" class="btn btn-success">Login</button>
-    <p>Don't have an account? Create one <a href="/register">Here</a></p>
-</form>
+            {% csrf_token %}
+            {{ form|crispy }}
 
-
+            <button type="submit" class="btn btn-success w-100">Login</button>
+            <p class="text-center mt-3">Don't have an account? Create one <a href="/register">Here</a></p>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

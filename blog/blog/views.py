@@ -10,7 +10,6 @@ def home_view(request):
     content = {'mydata': posts}
     template = loader.get_template('index.html')
     # return render(request, 'index.html')
-    print(content)
     return HttpResponse(template.render(content, request))
 
 

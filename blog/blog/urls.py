@@ -24,11 +24,14 @@ from . import views
 import os
 from users import views as v
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view, name='home_page',),
     path('', include('users.urls')),
     path('', include("django.contrib.auth.urls")),
+    path('', include('posts.urls')),
+    
 ] + static(settings.MEDIA_URL)
 
 

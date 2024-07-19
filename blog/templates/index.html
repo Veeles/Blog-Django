@@ -10,7 +10,9 @@
     {% for post in mydata%}
     <span class="d-block mx-auto mb-2" style="border-bottom: 1px solid black; width: 100%;"></span>
     <div class="card">
-        <img src="{% static post.photo %}" style="height: 500px; width: 1200px;" class="text-center mt-2 ml-5 mb-2">
+        <a href= "{% url 'post_handle' post.id %}">
+            <img src="{% static post.photo %}" style="height: 500px; width: 1200px;" class="text-center mt-2 ml-5 mb-2">
+        </a>
         <div class="card-body">
             <div class="d-flex flex-row justify-content-center">
                 <div class="flex-sm-fill ml-4">
@@ -25,7 +27,7 @@
 
                 <div class="flex-xxl-fill ml-5">
                     <h3 class="post_title mt-3 "><a href="" class="a_post_title ">{{post.title}}</a></h3>
-                    <p><strong> {{post.description}}</strong> </p>
+                    <p><strong> {{post.description|truncatechars:450}}</strong> </p>
                     <!-- <span class="border border-bottom ml-1" style="display:block; width:100%;"></span> -->
               
                 </div>

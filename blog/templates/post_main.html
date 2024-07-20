@@ -56,6 +56,29 @@
             <button type="submit" class="btn btn-outline-secondary w-100 ">Add Comment</button>
         </form>   
     </div>
+    <div class="d-flex flex-row justify-content-center mb-4 mt-2">
+        <div class="flex-md-fill mt-2">
+            <a href="{% url 'post_create'%}">
+                <button class="btn btn-danger w-50" >Create New Post</button>
+            </a>       
+         </div>
+         <div class="flex-md-fill  text-center mt-2">
+            <form method="post" action="{% url 'post_edit' post.id %}">
+                {% csrf_token  %}
+               
+                <button type="submit" value="Edit" name="Edit" class="btn btn-danger w-50" >Edit This Post</button>
+                
+            </form>
+        </div>
+        <div class="flex-md-fill ml-5 text-end mt-2">
+            <form method="post" action="{% url 'post_delete' post.id %}">
+                {% csrf_token  %}
+               
+                <button type="submit" value="Delete" name="Delete" class="btn btn-danger w-50" >Delete This Post</button>
+                
+            </form>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

@@ -31,7 +31,10 @@ urlpatterns = [
     path('', include('users.urls')),
     path('', include("django.contrib.auth.urls")),
     path('', include('posts.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     
 ] + static(settings.MEDIA_URL)
 
-
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

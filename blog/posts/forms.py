@@ -1,6 +1,7 @@
 from django import forms
 from .models import Comment, Post
 from django.contrib.auth.models import User
+from ckeditor.widgets import CKEditorWidget
 class Comments_form(forms.ModelForm):    
 
     class Meta:
@@ -13,12 +14,13 @@ class Comments_form(forms.ModelForm):
 
 
 class New_post(forms.ModelForm):
+    description = forms.CharField(widget=CKEditorWidget())
     class Meta:
         model = Post
         fields = ['title', 'description', 'photo', 'author']
         widgets = {
             'title':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Write title'}),
-            'description':forms.Textarea(attrs={'class':'form-control', 'placeholder':'Write description...'}),
+            # 'description':forms.Textarea(attrs={'class':'form-control', 'placeholder':'Write description...'}),
             'photo':forms.ClearableFileInput(attrs={'class':'btn btn-danger'}),
         }
 
@@ -28,11 +30,13 @@ class New_post(forms.ModelForm):
         
 
 class Update_post(forms.ModelForm):
+    description = forms.CharField(widget=CKEditorWidget())
+
     class Meta:
         model = Post
         fields = ['title', 'description', 'photo']
         widgets = {
                 'title':forms.TextInput(attrs={'class':'form-control'}),
-                'description':forms.Textarea(attrs={'class':'form-control'}),
+                # 'description':forms.Textarea(attrs={'class':'form-control'}),
                 'photo':forms.ClearableFileInput(attrs={'class':'btn btn-danger'}),
             }

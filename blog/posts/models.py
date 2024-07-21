@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
+from ckeditor.fields import RichTextField
 
 import os
 from django.utils.deconstruct import deconstructible
@@ -18,7 +18,7 @@ upload_to = PathAndRename('photos/')
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = RichTextField()
     photo = models.ImageField(upload_to='photos/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     

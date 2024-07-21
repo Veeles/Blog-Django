@@ -1,4 +1,6 @@
 <div class="footer" style="background-color: #28262c;">
+  {% load static %}
+
     <div>
 
       <h1 class="text-center  pt-4" id="title_footer" style="color: aliceblue;">
@@ -9,9 +11,9 @@
       </h4>
       <div class="container text-center"> 
         <div class="col pb-4">
-          <a href="https://www.linkedin.com/" style=" margin-right: 40px;" target="_blank"><img src="../static/linkedin.png"  href=""></a>
-          <a href="https://www.github.com/" style=" margin-right: 40px;" target="_blank"><img src="../static/github.png" ></a>
-          <a href="https://www.facebook.com/" target="_blank"><img src="../static/facebook.png"></a>
+          <a href="https://www.facebook.com/" style=" margin-right: 40px;" target="_blank"><img src="{% static 'photos/facebook.png' %}"  href=""></a>
+          <a href="https://www.instagram.com/" style=" margin-right: 40px;" target="_blank"><img src="{% static 'photos/instagram.png' %}" ></a>
+          <a href="https://www.twitter.com/" target="_blank"><img src="{% static 'photos/twitter.png' %}"></a>
         </div>
       </div>
     </div>

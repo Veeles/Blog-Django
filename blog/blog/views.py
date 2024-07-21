@@ -6,7 +6,7 @@ import os
 from posts.models import Post
 
 def home_view(request):
-    posts = Post.objects.all().values()
+    posts = Post.objects.all()
     content = {'mydata': posts}
     template = loader.get_template('index.html')
     # return render(request, 'index.html')

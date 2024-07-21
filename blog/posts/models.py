@@ -21,6 +21,7 @@ class Post(models.Model):
     description = RichTextField()
     photo = models.ImageField(upload_to='photos/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateTimeField()
     
     def __str__(self):
         return self.title

@@ -2,7 +2,7 @@ from django import forms
 from .models import Comment, Post
 from django.contrib.auth.models import User
 from ckeditor.widgets import CKEditorWidget
-class Comments_form(forms.ModelForm):    
+class CommentsForm(forms.ModelForm):    
 
     class Meta:
         model = Comment
@@ -13,7 +13,7 @@ class Comments_form(forms.ModelForm):
 
 
 
-class New_post(forms.ModelForm):
+class NewPost(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget())
     class Meta:
         model = Post
@@ -29,7 +29,7 @@ class New_post(forms.ModelForm):
     )
         
 
-class Update_post(forms.ModelForm):
+class UpdatePost(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget())
 
     class Meta:

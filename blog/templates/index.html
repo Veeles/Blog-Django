@@ -17,8 +17,8 @@
             <div class="d-flex flex-row justify-content-center">
                 <div class="flex-sm-fill ml-4">
                     
-                    <span style="color: red;" class="big_red_date">DAY/MON</span>
-                    <span class="comments_caption" style="font-size:28px; margin-left: 5px;">X COMMENTS</span>
+                    <span style="color: red; white-space: nowrap;" class="big_red_date">{{post.date|date:'d F'}} <br/> {{post.date|date:'Y'}}</span>
+                    <span class="comments_caption" style="font-size:28px; margin-left: 5px;">{{post.comments.count}} Comments</span>
 
 
                 

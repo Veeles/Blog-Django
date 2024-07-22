@@ -15,8 +15,6 @@ def post_handle(request, id):
         form = CommentsForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
-            print(f"User: {request.user}")  # Debugging: print user
-
             comment.author = request.user
             comment.post = post
             comment.save()
@@ -28,14 +26,10 @@ def post_handle(request, id):
 @login_required
 def post_create(request):
     if request.method == 'POST':
-        print('idzie')
-
         form = NewPost(request.POST, request.FILES)
         if form.is_valid():
             post = form.save()
-            print('jest')
             id = post.id
-            print('za')
             return redirect('post_handle', id=id)
     else:
         form = NewPost()

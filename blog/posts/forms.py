@@ -20,7 +20,6 @@ class NewPost(forms.ModelForm):
         fields = ['title', 'description', 'photo', 'author']
         widgets = {
             'title':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Write title'}),
-            # 'description':forms.Textarea(attrs={'class':'form-control', 'placeholder':'Write description...'}),
             'photo':forms.ClearableFileInput(attrs={'class':'btn btn-danger'}),
         }
 
@@ -37,6 +36,5 @@ class UpdatePost(forms.ModelForm):
         fields = ['title', 'description', 'photo']
         widgets = {
                 'title':forms.TextInput(attrs={'class':'form-control'}),
-                # 'description':forms.Textarea(attrs={'class':'form-control'}),
                 'photo':forms.ClearableFileInput(attrs={'class':'btn btn-danger'}),
             }

@@ -11,7 +11,7 @@ class PathAndRename:
         self.path = path
 
     def __call__(self, instance, filename):
-        return os.path.join(self.path, filename)  # Zwraca oryginalną nazwę pliku
+        return os.path.join(self.path, filename) 
 
 upload_to = PathAndRename('photos/')
 
